@@ -22,9 +22,11 @@ public class Enemy : MonoBehaviour
     {
         if(collision != null)
         {
-            Move();
-            if(collision.collider.CompareTag("Player"))
-                Destroy(this.gameObject);
+            if (look != null) {
+                Move();
+                if (collision.collider.CompareTag("Player"))
+                    Destroy(this.gameObject);
+            }
         }
     }
 }
